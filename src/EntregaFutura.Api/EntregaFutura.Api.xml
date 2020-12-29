@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EntregaFutura.Api</name>
+    </assembly>
+    <members>
+        <member name="M:EntregaFutura.Api.Controllers.AutenticacaoController.Get">
+            <summary>
+            Obtém a lista de usuários
+            </summary>
+            <returns>Coleção de objetos Usuários</returns>
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.AutenticacaoController.GetById(System.String)">
+            <summary>
+            Obtém um usuários pelo seu identificador UsuarioID
+            </summary>
+            <param name="name">Código do usuário</param>
+            <returns>Objeto Usuário</returns>
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.AutenticacaoController.RegisterUser(EntregaFutura.Repository.DTO.UsuarioDTO)">
+            <summary>
+            Inclui um novo usuário
+            </summary>
+            <param name="usuarioDto">Objeto Usuário</param>
+            <returns>Token</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.AutenticacaoController.Login(EntregaFutura.Repository.DTO.UsuarioDTO)">
+            <summary>
+            Loga o usuário no sistma
+            </summary>
+            <param name="usuarioDTO">Objeto Usuário</param>        
+            <returns>Token</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.AutenticacaoController.Logout">
+            <summary>
+            Desloga o usuário no sistma
+            </summary>        
+            <returns>Token</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.EntregasController.Get">
+            <summary>
+            Obtém a lista de entregas
+            </summary>
+            <returns>Coleção de objetos entregas</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.EntregasController.GetById(System.Int32)">
+            <summary>
+            Obtém a entrega pelo seu ID
+            </summary>
+            <param name="id">Código da entrega</param>
+            <returns>Objeto entrega </returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.EntregasController.Post(EntregaFutura.Repository.DTO.EntregaDTO)">
+            <summary>
+            Inclui a entrega
+            </summary>
+            <param name="entregaDto">Objeto entrega</param>
+            <returns>O objeto entrega incluído</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.EntregasController.Put(System.Int32,EntregaFutura.Repository.DTO.EntregaDTO)">
+            <summary>
+            Atualiza a entrega pelo ID
+            </summary>
+            <param name="id">Código da entrega</param>
+            <param name="entregaDto">Objeto entrega</param>
+            <returns>O objeto entrega alterado</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.EntregasController.Delete(System.Int32)">
+            <summary>
+            Deleta uma entrega pelo seu ID
+            </summary>
+            <param name="id">Código da entrega</param>
+            <returns>O objeto entrega excluído</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ListasPrecoController.Get">
+            <summary>
+            Obtém as listas de preço
+            </summary>
+            <returns>Coleção de objetos listas de preço</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ListasPrecoController.GetById(System.Int32)">
+            <summary>
+            Obtém a lista de preço pelo seu ID
+            </summary>
+            <param name="id">Código da lista de preço</param>
+            <returns>Objeto lista de preço </returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ListasPrecoController.Post(EntregaFutura.Repository.DTO.ListaPrecoDTO)">
+            <summary>
+            Inclui a lista de Preço
+            </summary>
+            <param name="listaPrecoDto">Objeto lista de preço</param>
+            <returns>O objeto lista preço incluído</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ListasPrecoController.Put(System.Int32,EntregaFutura.Repository.DTO.ListaPrecoDTO)">
+            <summary>
+            Atualiza a lista de preço pelo ID
+            </summary>
+            <param name="id">Código da lista de preço</param>
+            <param name="listaPrecoDto">Objeto lista de preço</param>
+            <returns>O objeto lista de preço alterado</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ListasPrecoController.Delete(System.Int32)">
+            <summary>
+            Deleta uma lista de preço pelo seu ID
+            </summary>
+            <param name="id">Código da lista de preço</param>
+            <returns>O objeto lista de preço excluído</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ListasPrecoController.PostProduto(EntregaFutura.Repository.DTO.ListaPrecoProdutoDTO)">
+            <summary>
+            Inclui o produto na lista de Preço
+            </summary>
+            <param name="listaPrecoProdutoDto">Objeto produto da lista de preço</param>
+            <returns>O objeto de produto da lista preço incluído</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ListasPrecoController.PutProduto(System.Int32,System.Int32,EntregaFutura.Repository.DTO.ListaPrecoProdutoDTO)">
+            <summary>
+            Atualiza o produto na lista de preço pelo ID
+            </summary>
+            <param name="id">Código da lista de preço</param>
+            <param name="idProduto">Código do produto</param>
+            <param name="listaPrecoProdutoDto">Objeto produto da lista de preço</param>
+            <returns>O objeto de produto da lista preço alterado</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ListasPrecoController.DeleteProduto(System.Int32,System.Int32)">
+            <summary>
+            Deleta um produto da lista de preço pelo seu ID
+            </summary>
+            <param name="id">Código da lista de preço</param>
+            <param name="idProduto">Código do produto</param>
+            <returns>O objeto lista de preço excluído</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.PedidosController.Get">
+            <summary>
+            Obtém os pedidos
+            </summary>
+            <returns>Coleção de objetos pedidos</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.PedidosController.GetById(System.Int32)">
+            <summary>
+            Obtém o pedido pelo seu ID
+            </summary>
+            <param name="id">Código do pedido</param>
+            <returns>Objeto pedido </returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.PedidosController.Post(EntregaFutura.Domain.DTO.PedidoDTO)">
+            <summary>
+            Inclui o pedido
+            </summary>
+            <param name="pedidoDto">Objeto pedido</param>
+            <returns>O objeto pedido incluído</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.PedidosController.Put(System.Int32,EntregaFutura.Domain.DTO.PedidoDTO)">
+            <summary>
+            Atualiza o pedido pelo ID
+            </summary>
+            <param name="id">Código do pedido</param>
+            <param name="pedidoDto">Objeto pedido</param>
+            <returns>O objeto pedido alterado</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.PedidosController.Delete(System.Int32)">
+            <summary>
+            Deleta um pedido pelo seu ID
+            </summary>
+            <param name="id">Código do pedido</param>
+            <returns>O objeto pedido excluído</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.PedidosController.PostItem(EntregaFutura.Domain.DTO.PedidoItemDTO)">
+            <summary>
+            Inclui o item no pedido
+            </summary>
+            <param name="pedidoItemDto">Objeto item do pedido</param>
+            <returns>O objeto item do pedido incluído</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.PedidosController.PutItem(System.Int32,System.Int32,EntregaFutura.Domain.DTO.PedidoItemDTO)">
+            <summary>
+            Atualiza o item no pedido pelo ID
+            </summary>
+            <param name="id">Código do pedido</param>
+            <param name="idItem">Item do pedido</param>
+            <param name="pedidoItemDto">Objeto item do pedido</param>
+            <returns>O objeto de item do pedido alterado</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.PedidosController.DeleteProduto(System.Int32,System.Int32)">
+            <summary>
+            Deleta um item do pedido pelo seu ID
+            </summary>
+            <param name="id">Código do pedido</param>
+            <param name="idItem">Item do pedido</param>
+            <returns>O objeto item do pedido excluído</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ProdutosController.Get">
+            <summary>
+            Obtém a lista de produtos
+            </summary>
+            <returns>Coleção de objetos Produtos</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ProdutosController.GetProdutosPaginados(EntregaFutura.Repository.Pagination.ProdutosParameters)">
+            <summary>
+            Obtém a lista de produtos
+            </summary>
+            <returns>Coleção de objetos Produtos</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ProdutosController.GetById(System.Int32)">
+            <summary>
+            Obtém o produto pelo seu ID
+            </summary>
+            <param name="id">Código do produto</param>
+            <returns>Objeto Produto</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ProdutosController.GetImagens(System.Int32)">
+            <summary>
+            Obtém as imagens do produto pelo seu ID
+            </summary>
+            <param name="id">Código do produto</param>
+            <returns>Coleção de objetos Imagens</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ProdutosController.Post(EntregaFutura.Repository.DTO.ProdutoDTO)">
+            <summary>
+            Inclui o novo produto
+            </summary>
+            <param name="produtoDto">Objeto produto</param>
+            <returns>O objeto produto incluído</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ProdutosController.Put(System.Int32,EntregaFutura.Repository.DTO.ProdutoDTO)">
+            <summary>
+            Atualiza o produto pelo ID
+            </summary>
+            <param name="id">Código do produto</param>
+            <param name="produtoDto">Objeto produto</param>
+            <returns>O objeto produto alterado</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ProdutosController.Delete(System.Int32)">
+            <summary>
+            Deleta o produto pelo seu ID
+            </summary>
+            <param name="name">Código do produto</param>
+            <returns>O objeto produto excluído</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ProdutosGrupoController.Get">
+            <summary>
+            Obtém a lista de grupos de produtos
+            </summary>
+            <returns>Coleção de objetos grupos de produtos</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ProdutosGrupoController.GetById(System.Int32)">
+            <summary>
+            Obtém o grupo de produto pelo seu ID
+            </summary>
+            <param name="id">Código do grupo de grupo</param>
+            <returns>Objeto grupo de produto </returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ProdutosGrupoController.Post(EntregaFutura.Repository.DTO.ProdutoGrupoDTO)">
+            <summary>
+            Inclui o novo grupo de produto
+            </summary>
+            <param name="produtoGrupoDto">Objeto grupo de produto</param>
+            <returns>O objeto grupo de produto incluído</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ProdutosGrupoController.Put(System.Int32,EntregaFutura.Repository.DTO.ProdutoGrupoDTO)">
+            <summary>
+            Atualiza o grupo de produto pelo ID
+            </summary>
+            <param name="id">Código do grupo de produto</param>
+            <param name="produtoGrupoDto">Objeto grupo de produto</param>
+            <returns>O objeto grupo de produto alterado</returns>        
+        </member>
+        <member name="M:EntregaFutura.Api.Controllers.ProdutosGrupoController.Delete(System.Int32)">
+            <summary>
+            Deleta um produto pelo seu ID
+            </summary>
+            <param name="id">Código do produto</param>
+            <returns>O objeto grupo de produto exvluído</returns>        
+        </member>
+    </members>
+</doc>
