@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DevIO.Api.Extensions
 {
-    public class HealthCheck : IHealthCheck
+    public class EntregasHealthCheck : IHealthCheck
     {
         readonly string _connection;
 
-        public HealthCheck(string connection)
+        public EntregasHealthCheck(string connection)
         {
             _connection = connection;
         }

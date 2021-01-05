@@ -2,6 +2,7 @@ using ApiCatalogo.Repository;
 using AutoMapper;
 using DevIO.Api.Extensions;
 using DevIO.Business.Intefaces;
+using EntregaFutura.Api.Filters;
 using EntregaFutura.Api.Services;
 using EntregaFutura.Domain.Models;
 using EntregaFutura.Repository.DTO.Mappings;
@@ -55,6 +56,7 @@ namespace EntregaFutura.Api
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUsuarioService, UsuarioService>();
             services.AddScoped<DataService>();
+            services.AddScoped<ExemploActionFilter>();
 
             // Adiciona os controladores ao projeto            
             services.AddControllers(options => options.SuppressAsyncSuffixInActionNames = false).AddNewtonsoftJson(options =>
@@ -140,7 +142,7 @@ namespace EntregaFutura.Api
             // Adiciona o Health Checks
             services.AddHealthChecks()
                 .AddMySql(Configuration.GetConnectionString("DefaultConnection"), name: "Banco")
-                .AddCheck("Entregas", new HealthCheck(Configuration.GetConnectionString("DefaultConnection")));
+                .AddCheck("Entregas", new EntregasHealthCheck(Configuration.GetConnectionString("DefaultConnection")));
             services.AddHealthChecksUI().AddInMemoryStorage();
         }
 

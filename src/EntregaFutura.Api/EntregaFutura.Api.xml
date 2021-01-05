@@ -26,14 +26,14 @@
         </member>
         <member name="M:EntregaFutura.Api.Controllers.AutenticacaoController.Login(EntregaFutura.Repository.DTO.UsuarioDTO)">
             <summary>
-            Loga o usuário no sistma
+            Loga o usuário no sistema
             </summary>
             <param name="usuarioDTO">Objeto Usuário</param>        
             <returns>Token</returns>        
         </member>
         <member name="M:EntregaFutura.Api.Controllers.AutenticacaoController.Logout">
             <summary>
-            Desloga o usuário no sistma
+            Desloga o usuário no sistema
             </summary>        
             <returns>Token</returns>        
         </member>

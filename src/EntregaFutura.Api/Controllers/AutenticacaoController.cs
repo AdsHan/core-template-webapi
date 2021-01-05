@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DevIO.Business.Intefaces;
+using EntregaFutura.Api.Filters;
 using EntregaFutura.Api.Services;
 using EntregaFutura.Domain.Models;
 using EntregaFutura.Repository.DTO;
@@ -176,17 +177,18 @@ namespace EntregaFutura.Api.Controllers
 
         // GET: api/autenticacao/login
         /// <summary>
-        /// Loga o usuário no sistma
+        /// Loga o usuário no sistema
         /// </summary>
         /// <param name="usuarioDTO">Objeto Usuário</param>        
         /// <returns>Token</returns>        
         [HttpPost("login")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ServiceFilter(typeof(ExemploActionFilter))]
         public async Task<ActionResult> Login([FromBody] UsuarioDTO usuarioDTO)
         {
 
-            // Verifica as credenciais do usuário e retorna um valor
+            // Verifica as credenciais do usuário
             var result = await _signInManager.PasswordSignInAsync(
                 usuarioDTO.UserName,
                 usuarioDTO.Password,
@@ -212,7 +214,7 @@ namespace EntregaFutura.Api.Controllers
 
         // GET: api/autenticacao/logout
         /// <summary>
-        /// Desloga o usuário no sistma
+        /// Desloga o usuário no sistema
         /// </summary>        
         /// <returns>Token</returns>        
         [HttpPost("logout")]
@@ -231,25 +233,24 @@ namespace EntregaFutura.Api.Controllers
             var user = await _userManager.FindByEmailAsync(usuarioDTO.UserName);
             LevelUser level = await _usuarioService.GetCurrentUserLevel(user);
 
-            // Define claims do usuário (nao é obrigatorio, mas melhora a segurança(cria mais chaves no PAYLOAD))
+            // Define as claims do usuário (não é obrigatório, mas melhora a segurança (cria mais chaves no Payload))
             var claims = new[]
             {
-                 new Claim(JwtRegisteredClaimNames.UniqueName, usuarioDTO.UserName),
-                 new Claim("meuPet", "pipoca"),
+                 new Claim(JwtRegisteredClaimNames.UniqueName, usuarioDTO.UserName),                 
                  new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
              };
 
-            // Gera uma chave com base em um algoritmo simétrico
+            // Gera uma chave
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:key"]));
 
-            // Gera a assinatura digital do token usando o algoritmo Hmac e a chave privada
+            // Gera a assinatura digital do token
             var credenciais = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            // Tempo de expiracão do token.
+            // Tempo de expiracão do token
             var expiracao = _configuration["TokenConfiguration:ExpireHours"];
             var expiration = DateTime.UtcNow.AddHours(double.Parse(expiracao));
 
-            // Classe que representa um token JWT e gera o token
+            // Gera o token
             JwtSecurityToken token = new JwtSecurityToken(
               issuer: _configuration["TokenConfiguration:Issuer"],
               audience: _configuration["TokenConfiguration:Audience"],
@@ -257,7 +258,7 @@ namespace EntregaFutura.Api.Controllers
               expires: expiration,
               signingCredentials: credenciais);
 
-            // Retorna os dados com o token e informacoes
+            // Retorna o token e demais informações
             var response = new LoginTokenDTO
             {
                 Authenticated = true,

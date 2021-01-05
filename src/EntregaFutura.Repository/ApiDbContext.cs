@@ -9,7 +9,7 @@ namespace EntregaFutura.Repository.Model
 
     public class ApiDbContext : IdentityDbContext<UsuarioModel, RegraModel, string, IdentityUserClaim<string>, UsuarioRegraModel, IdentityUserLogin<string>, IdentityRoleClaim<string>, IdentityUserToken<string>>
     {
-        public ApiDbContext(DbContextOptions options) : base(options)
+        public ApiDbContext(DbContextOptions<ApiDbContext> options) : base(options)
         {
 
         }
