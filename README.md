@@ -1,5 +1,5 @@
 # core-template-webapi
-Aplicação .Net Core 3.1 WebAPI desenvolvida tendo como cenário um aplicativo fictício chamado "Entrega Futura". A aplicação contém os conceitos essenciais para a criação de Web APIs na plataforma .NET. 
+Aplicação .Net Core 3.1 Web API desenvolvida tendo como cenário um aplicativo fictício chamado "Entrega Futura". A aplicação contém os conceitos essenciais para a criação de Web APIs na plataforma .NET. 
 
 # Objetivo:
 O objetivo desta aplicação é ser um Template Project / Api boilerplate, que poderá ser usado como "kickstart" para o seu projeto, ou então como base referencial para algum dos assuntos tratados.
@@ -24,10 +24,13 @@ O objetivo desta aplicação é ser um Template Project / Api boilerplate, que p
 - Swagger/Swagger UI;
 
 # TODO
-- Autenticação de usuários com Claims;
-- Testes Unitários;
-- Versão do projeto em diferentes arquiteturas.
-- Docker;
+- Autenticação de usuários utilizando Claims;
+- Exemplo de Action Filters;
+- Testes Unitários com XUnit;
+- Log utilizando o provider elmah.io;
+- Publicação utilizando Docker;
+- Migração de Asp.Net 3.1 para 5.0;
+- Versão do projeto em diferentes arquiteturas;
 
 # Sobre
 Este projeto foi desenvolvido por Anderson Hansen sob [MIT license](LICENSE).
