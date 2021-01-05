@@ -20,12 +20,12 @@ O objetivo desta aplicação é ser um Template Project / Api boilerplate, que p
 - Política CORS;
 - Identity (Inclusive com a criação de campos próprios e mensagens de validação em português);
 - Versionamento da API;
+- Exemplo de Action Filters;
 - Health Checks/Health Checks UI;
 - Swagger/Swagger UI;
 
 # TODO
 - Autenticação de usuários utilizando Claims;
-- Exemplo de Action Filters;
 - Testes Unitários com XUnit;
 - Log utilizando o provider elmah.io;
 - Publicação utilizando Docker;

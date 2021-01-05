@@ -171,7 +171,9 @@ namespace EntregaFutura.Api.Controllers
 
             await _signInManager.SignInAsync(user, false);
 
-            return Ok(GeraTokenAsync(usuarioDto));
+            LoginTokenDTO loginTokenDTO = await GeraTokenAsync(usuarioDto);
+
+            return Ok(loginTokenDTO);            
 
         }
 
@@ -203,7 +205,9 @@ namespace EntregaFutura.Api.Controllers
 
                 await _userManager.UpdateAsync(usuario);
 
-                return Ok(GeraTokenAsync(usuarioDTO));
+                LoginTokenDTO loginTokenDTO = await GeraTokenAsync(usuarioDTO);
+
+                return Ok(loginTokenDTO);
             }
             else
             {
