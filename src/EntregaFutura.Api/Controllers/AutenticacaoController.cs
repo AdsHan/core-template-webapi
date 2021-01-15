@@ -120,7 +120,7 @@ namespace EntregaFutura.Api.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<UsuarioDTO>> GetById(string name)
         {
-            // return await um?.Users?.SingleOrDefaultAsync(x => x.UserName == name);
+            
             var applicationUserModel = await _userManager.FindByNameAsync(name);
             if (applicationUserModel == null)
             {
@@ -173,7 +173,7 @@ namespace EntregaFutura.Api.Controllers
 
             LoginTokenDTO loginTokenDTO = await GeraTokenAsync(usuarioDto);
 
-            return Ok(loginTokenDTO);            
+            return Ok(loginTokenDTO);
 
         }
 
@@ -240,7 +240,7 @@ namespace EntregaFutura.Api.Controllers
             // Define as claims do usuário (não é obrigatório, mas melhora a segurança (cria mais chaves no Payload))
             var claims = new[]
             {
-                 new Claim(JwtRegisteredClaimNames.UniqueName, usuarioDTO.UserName),                 
+                 new Claim(JwtRegisteredClaimNames.UniqueName, usuarioDTO.UserName),
                  new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
              };
 

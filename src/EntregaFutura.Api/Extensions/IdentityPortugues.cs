@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace DevIO.Api.Extensions
+namespace EntregaFutura.Api.Extensions
 {
     public class IdentityPortugues : IdentityErrorDescriber
     {
